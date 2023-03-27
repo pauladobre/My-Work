@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap);
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: hsl(30, 38%, 92%);
+}
+
+main {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.perfume-pic {
+    width: 350px;
+    border-radius: 20px 0px 0px 20px;
+    height: 500px;
+}
+
+.card-text {
+    border-radius: 0px 20px 20px 0px;
+    background: white;
+    height: 500px;
+    width: 325px;
+    /* display: flexbox;
+    padding: 0px, 30px; */
+}
+
+.card-text h1 {
+    color: hsl(228, 12%, 48%);
+    font-size: 14px;
+    padding-left: 30px;
+    font-weight: 500;
+    margin: 20px 0px 20px 0px;
+}
+
+.card-text h2 {
+    padding-left: 30px;
+    font-family: 'Fraunces', serif;
+    font-size: 35px;
+    color: hsl(212, 21%, 14%);
+    margin-bottom: 30px;
+    margin-right: 70px;
+}
+
+.card-text p {
+    color: hsl(228, 12%, 48%);
+    font-size: 14px;
+    padding-left: 30px;
+    font-weight: 500;
+    margin-right: 70px;
+
+}
+
+.card-text button {
+    /* width: max-content; */
+    color: hsl(158, 36%, 37%);
+    border: none;
+}
+
+.card-price {
+    align-items: center;
+    display: flex;
+    margin-top: 20px;
+}
+
+.card-price h1 {
+    color: hsl(158, 36%, 37%);
+    font-size: 35px;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+}
+
+.card-price s {
+    color: hsl(228, 12%, 48%);
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+/* .card-button{
+    background-color: hsl(158, 36%, 37%);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    border-style: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500; */
+
+
+*/ .icon-cart {
+    width: 40px;
+    margin-right: 20px;
+}
+
+.card-button button {
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: hsl(158, 36%, 37%);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 80%;
+}
+
+button:hover {
+    background-color: hsl(158, 36%, 20%);
+}

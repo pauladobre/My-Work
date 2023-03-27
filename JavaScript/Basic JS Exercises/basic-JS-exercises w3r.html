@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript basic - Exercises, Practice, Solution</title>
+</head>
+
+<body>
+    <p></p>
+    <p>Click the button to print the current page.</p>
+    <button onclick="printCurrentPage()">Print this page</button>
+
+
+
+    <script>
+        console.log(`-------------------`);
+        console.log(`1. Write a JavaScript program to display the current day and time in the following format.`);
+
+        // Get current date and time
+        const now = new Date();
+
+        // Define days of the week
+        const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        // Get current day of the week
+        const dayOfWeek = daysOfWeek[now.getDay()];
+
+        // Get current hour, minute, and second
+        let hour = now.getHours();
+        const minute = now.getMinutes();
+        const second = now.getSeconds();
+
+        // Determine if it's AM or PM and adjust hour accordingly
+        let amOrPm = 'AM';
+        if (hour >= 12) {
+            amOrPm = 'PM';
+        }
+        if (hour > 12) {
+            hour -= 12;
+        }
+
+        // Construct message and display
+        const message = `Today is: ${dayOfWeek}. \nCurrent time is: ${hour} ${amOrPm} : ${minute} : ${second}`;
+        console.log(message);
+
+        console.log(`-------------------`);
+        console.log(`2. Write a JavaScript program to print the contents of the current window.`);
+
+        function printCurrentPage() {
+            window.print();
+        }
+
+        console.log(`-------------------`);
+        console.log(`2. Write a JavaScript program to print the contents of the current window.`);
+        const currentDate = new Date();
+
+        // Format: mm-dd-yyyy
+        const month = currentDate.getMonth() + 1;
+        const day = currentDate.getDate();
+        const year = currentDate.getFullYear();
+        const formattedDate1 = `${month}-${day}-${year}`;
+
+        // Format: mm/dd/yyyy
+        const formattedDate2 = `${month}/${day}/${year}`;
+
+        // Format: dd-mm-yyyy
+        const formattedDate3 = `${day}-${month}-${year}`;
+
+        // Format: dd/mm/yyyy
+        const formattedDate4 = `${day}/${month}/${year}`;
+
+        console.log(`Formatted Date 1: ${formattedDate1}`);
+        console.log(`Formatted Date 2: ${formattedDate2}`);
+        console.log(`Formatted Date 3: ${formattedDate3}`);
+        console.log(`Formatted Date 4: ${formattedDate4}`);
+
+        console.log(`-------------------`);
+        console.log(`4. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7. `);
+
+        const a = 5;
+        const b = 6;
+        const c = 7;
+        const perimeter = (a + b + c) / 2;
+        const area = Math.sqrt(perimeter * ((perimeter - a) * (perimeter - b) * (perimeter - c)));
+        console.log(Math.round(area));
+
+        console.log(`-------------------`);
+        console.log(`5. Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front.`);
+        let str = 'w3resource';
+
+        function rotateString(str) {
+            let interval = setInterval(function () {
+                str = str[str.length - 1] + str.substring(0, str.length - 1);
+                console.log(str);
+            }, 1000);
+
+            setTimeout(function () {
+                clearInterval(interval);
+            }, str.length * 1000);
+        }
+
+        // rotateString(str);
+
+        console.log(`-------------------`);
+        console.log(`6. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.`);
+
+        function isLeapYear(year) {
+            if (year % 4 === 0 && year % 100 != 0 || year % 400 === 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        console.log(isLeapYear(2020)); // true
+        console.log(isLeapYear(2021)); // false
+        console.log(isLeapYear(2000)); // true
+        console.log(isLeapYear(1900)); // false
+
+        console.log(`-------------------`);
+        console.log(`7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050`);
+        for (let year = 2014; year <= 2050; year++) {
+            const date = new Date(year, 0, 1); // 0 represents January
+            if (date.getDay() === 0) {
+                console.log(`1st January ${year} is a Sunday`);
+            }
+        }
+        
+        console.log(`-------------------`);
+        console.log(`7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050`);
+
+
+
+    </script>
+</body>
+
+</html>

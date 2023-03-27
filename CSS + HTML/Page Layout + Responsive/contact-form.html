@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/1303/PNG/512/checkform_85890.png" type="image/x-icon" />
+    <link rel="stylesheet" href="contact-form.css">
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="typography.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <h1 class="header">Contact Us</h1>
+            <p class="paragraph">Got a question? We'd love to hear from you. Send us a message <br> and we'll respond as soon
+                as possible. </p>
+
+            <form>
+                <label for="name">Name *</label> <br>
+                <input id="name" type="text" name="name" required><br>
+
+                <label for="email">Email Address *</label> <br>
+                <input id="email" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    required><br>
+
+                <label for="message">Message</label> <br>
+                <textarea id="message" type="text" name="message" style="height: 100px"></textarea> <br>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

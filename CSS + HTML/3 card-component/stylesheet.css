@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap);
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(0, 0%, 95%);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.car {
+    display: flex;
+    flex-direction: row;
+    padding: 100px;
+}
+
+.sedan {
+    background-color: hsl(31, 77%, 52%);
+    border-radius: 10px 0px 0px 10px;
+    height: 500px;
+    width: 300px;
+}
+
+.suv {
+    background-color: hsl(184, 100%, 22%);
+    height: 500px;
+    width: 300px;
+}
+
+.luxury {
+    background-color: hsl(179, 100%, 13%);
+    border-radius: 0px 10px 10px 0px;
+    height: 500px;
+    width: 300px;
+}
+
+img {
+    padding-left: 40px;
+    padding-top: 40px;
+}
+
+h2 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    color: hsla(0, 0%, 100%, 0.75);
+    padding: 30px;
+    font-size: 35px;
+    margin-left: 10px;
+
+}
+
+p {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    color: hsla(0, 0%, 100%, 0.75);
+    margin-left: 40px;
+    margin-right: 45px;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+button {
+    background-color: hsl(0, 0%, 95%);
+    margin-top: 70px;
+    margin-left: 45px;
+    padding: 15px 40px 15px 40px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    border-radius: 100px;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+}
+
+.btn-sedan {
+    color: hsl(31, 77%, 52%);
+}
+
+.btn-suv {
+    color: hsl(184, 100%, 22%);
+}
+
+.btn-luxury {
+    color: hsl(179, 100%, 13%);
+}
+
+.btn-sedan:hover {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: solid;
+}
+.btn-suv:hover {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: solid;
+}
+.btn-luxury:hover {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: solid;
+}

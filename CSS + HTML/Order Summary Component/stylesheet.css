@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 16px;
+    background-image: url(images/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: hsl(225, 100%, 94%);
+}
+
+.card {
+    width: 450px;
+    background-color: white;
+    color: hsl(224, 23%, 55%);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 50px auto;
+}
+
+.title {
+    color: hsl(223, 47%, 23%);
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.hero-image {
+    width: 100%;
+}
+
+.container {
+    padding: 30px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    text-align: center;
+    font-size: 18px;
+}
+
+.order-description {
+    line-height: 25px;
+}
+
+.plan-container {
+    font-size: 16px;
+    background-color: hsl(225, 100%, 98%);
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plan-container a {
+    color: hsl(245, 75%, 52%);
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.plan-container a:hover {
+    opacity: 0.8;
+}
+
+
+.plan-description {
+    line-height: 20px;
+    margin-right: 75px;
+}
+
+.proceed-button {
+    display: block;
+    color: white;
+    background-color: hsl(245, 75%, 52%);
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 20px 30px -8px rgb(197 189 245)
+}
+
+.proceed-button:hover {
+    background-color: hsl(240, 50%, 59%);
+}
+
+.cancel-button {
+    font-weight: 800;
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+    margin-top: 22px;
+    text-align: center;
+    margin-bottom: 22px;
+    display: block;
+}
+
+a.cancel-button:hover {
+    color: black
+}

@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap);
+
+body{
+    background-color: hsl(233, 47%, 7%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+}
+
+.container{
+    background-color: hsl(244, 38%, 16%);
+    color: white;
+    padding: 50px 40px 20px 40px
+}
+.statistics{
+    display: flex;
+    justify-content: space-around;
+}
+
+.header{
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 20px 80px 40px 0px;
+}
+
+.paragraph{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    color: hsla(0, 0%, 100%, 0.75);
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.statistics h3{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 40px 80px 10px 0px;
+}
+
+.statistics p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 12px;
+    color: hsla(0, 0%, 100%, 0.75);
+  letter-spacing: 2px;
+}
+
+span{
+    color: hsl(277, 64%, 61%);
+}
+.image{
+    background: hsl(277, 64%, 61%);
+    opacity: 0.5;
+}
+img{
+    opacity: 0.75;
+    height: 100%;
+}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms
+    </title>
+</head>
+
+<body>
+    <script>
+        // var numberArray = [5, 15, 1, 3, 4, 75, 25, 6, 7, 11, 6, 2, 15, -1, 90, 76, 76];
+
+        //Problem1: Return the first n elements from an array
+
+        // var x = 7;
+        // for (var i = 0; i < x; i++) {
+        //     if (i === numberArray.length)
+        //         break;
+        //     console.log(`Problem 1 - First ${x} elements: ${numberArray[i]}`);
+        // }
+
+        //Problem2: Return the even numbers from array
+        // for (var i = 0; i < numberArray.length; i++) {
+        //     var numberFromArray = numberArray[i];
+        //     if (numberFromArray % 2 === 0)
+        //         console.log(`the even numbers are: ${numberFromArray}`)
+        // }
+
+        //Problem3: Split the array in 2 arrays: odd/even numbers
+
+        // var evenNumbersArray = [];
+        // var oddNumbersArray = [];
+
+        // for (var i = 0; i < numberArray.length; i++) {
+        //     if (numberArray[i] % 2 === 0)
+        //         evenNumbersArray.push(numberArray[i])
+        //     else
+        //         oddNumbersArray.push(numberArray[i])
+        // }
+        // console.log(evenNumbersArray);
+        // console.log(oddNumbersArray);
+
+        // //Parcurg fiecare element din sir
+        // //Verific daca se imparte exact la 2
+        // //Daca da il pun intr-un array
+        // //Daca nu il pun in alt array
+        // //Afisez array-urile nou create
+
+        //Problem4: Log n last items;
+
+        // var n = 4;
+
+        // for (var i = numberArray.length - n; i < numberArray.length; i++)
+        // console.log(numberArray[i]);
+
+        //Problem5: Log items in reverse order;
+
+        // for (var i = numberArray.length - 1; i >= 0; i--)
+        //     console.log(numberArray[i])
+
+        //Problem6: Log the sum for the elements in the array
+
+        // var sum = 0;
+        // for (var i = 0; i < numberArray.length; i++) {
+        //     sum = sum + numberArray[i]
+        // }
+        // console.log(sum)
+
+        //Problem7: Find min/max din array
+
+        var minNumber = numberArray[0];
+        var maxNumber = numberArray[0];
+
+        for (var i = 1; i < numberArray.length; i++) {
+            if (minNumber > numberArray[i])  //5>15 NU 15>1 DA
+                minNumber = numberArray[i];  //minNumber=1
+
+            if (maxNumber < numberArray[i]) //5<15 DA
+                maxNumber = numberArray[i]; //maxNumber=15
+        }
+        console.log(minNumber);
+        console.log(maxNumber);
+
+        //Problem8: FizzBuzz game: if divide by 3 => fizz, if divide by 5 => buzz, if divide cu 15 => fizzbuzz
+
+        // var fizzBuzzArray = [];
+
+        // for (var i = 0; i < numberArray.length; i++) {
+        //     if (numberArray[i] % 15 === 0)
+        //         fizzBuzzArray.push("fizzbuzz");
+        //     else if (numberArray[i] % 3 === 0)
+        //         fizzBuzzArray.push("fizz");
+        //     else if (numberArray[i] % 5 === 0)
+        //         fizzBuzzArray.push("buzz");
+        //     else
+        //         fizzBuzzArray.push(numberArray[i]);
+        // }
+        // console.log(fizzBuzzArray);
+
+
+        //Problem10: From a list of persons (a person is defined by name, age, location)
+        // => only those over 18 and from a specific location can vote
+
+        // var person1 = {
+        //     name: "Ion",
+        //     age: 70,
+        //     location: "Cluj"
+        // }
+
+        // var person2 = {
+        //     name: "Ionel",
+        //     age: 40,
+        //     location: "Cluj"
+        // }
+
+        // var person3 = {
+        //     name: "Mara",
+        //     age: 20,
+        //     location: "Cluj"
+        // }
+
+        // var person4 = {
+        //     name: "Ioana",
+        //     age: 22,
+        //     location: "Arad"
+        // }
+
+        // var person5 = {
+        //     name: "Ana",
+        //     age: 13,
+        //     location: "Sibiu"
+        // }
+
+        // var personList = [person1, person2, person3, person4, person5];
+
+        // var city = "Cluj";
+
+        // for (var i = 0; i < personList.length; i++) {
+
+        //     var person = personList[i];
+
+        //     if (person.age >= 18 && person.location === city) {
+        //         console.log(person.name + " from " + person.location + " can vote because you are " + person.age);
+        //     }
+        //     // else if (person.age < 18 && person.location === city) {
+        //     //     console.log(person.name + " cannot vote, you are " + person.age);
+        //     // }
+        //     else if (person.age >= 18 && person.location !== city) {
+        //         console.log(person.name + " cannot vote, you are not from " + city);
+        //     }
+        //     else {
+        //         console.log(person.name + " cannot vote, you are not from " + city + " and you are " + person.age);
+        //     }
+        // }
+
+
+        //BMI Calculator
+
+        // var person1 = {
+        //     name: "John Doe",
+        //     gender: "M",
+        //     weight: 80,
+        //     height: 1.88
+        // }
+        // var person2 = {
+        //     name: "Jane",
+        //     gender: "F",
+        //     weight: 30,
+        //     height: 1.62
+        // }
+        // var person3 = {
+        //     name: "Johnny",
+        //     gender: "M",
+        //     weight: 80,
+        //     height: 1.73
+        // }
+        // var person4 = {
+        //     name: "Jill",
+        //     gender: "F",
+        //     weight: 170,
+        //     height: 1.88
+        // }
+        // person1.bmi = person1.weight / (person1.height * person1.height);
+        // person2.bmi = person2.weight / (person2.height * person2.height);
+        // person3.bmi = person3.weight / (person3.height * person3.height);
+        // person4.bmi = person4.weight / (person4.height * person4.height);
+
+        // var peopleList = [person1, person2, person3, person4];
+
+        // for (var i = 0; i < peopleList.length; i++) {
+        //     var person = peopleList[i];
+        //     var bmi = Math.round(person.bmi);
+        //     var category;
+        //     if (bmi < 18.5) {
+        //         category = "underweight";
+        //     } else if (bmi < 25) {
+        //         category = "normal";
+        //     } else if (bmi < 30) {
+        //         category = "overweight";
+        //     } else {
+        //         category = "obese";
+        //     }
+        //     console.log(`${person.name} | ${person.gender} | ${bmi} | ${category}`);
+
+        // }
+
+        // for (var i = 0; i < peopleList.length; i++) {
+        //     var person = peopleList[i]
+        //     weight = person.weight
+        //     height = person.height
+        //     bmi = weight / (height * height)
+        //     var bmi = Math.round(bmi);
+        //     if (bmi < 18.5) {
+        //         console.log(`${person.name} | ${person.gender} | ${bmi} | underweight`)
+        //     }
+
+        //     if (bmi >= 18.5 && bmi <= 25) {
+        //         console.log(`${person.name} | ${person.gender} | ${bmi} | normal`)
+        //     }
+        //     if (bmi >= 25 && bmi <= 30) {
+        //         console.log(`${person.name} | ${person.gender} | ${bmi} | overweight`)
+        //     }
+
+        //     if (bmi >= 30) {
+        //         console.log(`${person.name} | ${person.gender} | ${bmi} | obese`)
+        //     }
+        // }
+
+        ////AGAIN
+        //Problem1: Return the first n elements from an array
+
+        var numberArray = [113, 35, 57, 32, -82, 99, 8, 64, 71, 0, 8, 17, 98, 50, 1, 39, -3];
+        // var n = 5
+        // //     var nArray = [];
+
+        // //     for (i = 0; i < n; i++) {
+        // //         nArray.push(numberArray[i])
+        // //     }
+        // //     console.log(nArray);
+
+        // var count = 0;
+        // for (var i = 0; i < numberArray.length; i++) {
+        //     if (count === n) {
+        //         break;
+        //     }
+        //     console.log(numberArray[i]);
+        //     count++;
+        // }
+
+        //Problem2: Return the even numbers from array
+
+        // for (var i = 0; i < numberArray.length; i++) {
+        //     if (numberArray[i] % 2 == 0) {
+        //         console.log(numberArray[i]);
+        //     }
+        // }
+
+        // for (var i = 0; i < numberArray.length; i++) {
+        //     var nrFromArray = numberArray[i];
+        //     if (nrFromArray % 2 !== 0)
+        //         continue;
+        //     console.log(numberArray[i]);
+        // }
+
+        //Problem3: Split the array in 2 arrays: odd/even numbers
+
+        // var evenNumber = [];
+        // var oddNumber = [];
+
+        // for (var i = 0; i < numberArray.length; i++) {
+        //     if (numberArray[i] % 2 === 0) {
+        //         evenNumber.push(numberArray[i]);
+        //     }
+        //     else {
+        //         oddNumber.push(numberArray[i]);
+        //     }
+        // }
+        // console.log(evenNumber);
+        // console.log(oddNumber);
+
+        //Problem4: Log n last items;
+
+        // var n = 3;
+        // for (var i = numberArray.length - n; i < numberArray.length; i++) {
+        //     console.log(numberArray[i]);
+        // }
+
+        // Problem5: Log items in reverse order;!!!!!!!!!!!
+
+        // for ( var i = numberArray.length - 1; i >= 0; i--){
+        //     console.log(numberArray[i]);
+        // }
+
+        //Problem6: Log the sum for the elements in the array
+
+        // var sum = 0;
+        // for (var i = 0; i < numberArray.length; i++) {
+        //     sum = sum + numberArray[i];
+        // }
+        // console.log(sum);
+
+        //Problem7: Find min/max din array
+        var numberArray = [113, 35, 57, 32, -82, 99, 8, 64, 71, 0, 8, 17, 98, 50, 1, 39, -3];
+        // var minNumber = numberArray[0];
+        // var maxNumber = numberArray[0];
+
+        // for (var i = 1; i < numberArray.length; i++) {
+        //     if (numberArray[i] <= minNumber)
+        //         minNumber = numberArray[i];
+        //     if (numberArray[i] >= maxNumber)
+        //         maxNumber = numberArray[i];
+        // }
+        // console.log(maxNumber);
+        // console.log(minNumber);
+
+        //Problem8: FizzBuzz game: if divide by 3 => fizz, id divide by 5 => buzz, if divide cu 15 => fizzbuzz
+
+        // for (var i = 0; i < numberArray.length; i++) {
+        //     if (numberArray[i] % 15 === 0)
+        //         numberArray[i] = "fizzbuzz";
+        //     else if (numberArray[i] % 5 === 0)
+        //         numberArray[i] = "buzz";
+        //     else if (numberArray[i] % 3 === 0)
+        //         numberArray[i] = "fizz";
+        //     else numberArray[i];
+        // }
+        // console.log(numberArray);
+
+        //Problem10: From a list of persons (a person is defined by name, age, location)
+        // => only those over 18 and from a specific location can vote
+
+        // var person1 = {
+        //     name: "Ion",
+        //     age: 70,
+        //     location: "Cluj"
+        // }
+
+        // var person2 = {
+        //     name: "Ionel",
+        //     age: 40,
+        //     location: "Cluj"
+        // }
+
+        // var person3 = {
+        //     name: "Mara",
+        //     age: 20,
+        //     location: "Cluj"
+        // }
+
+        // var person4 = {
+        //     name: "Ioana",
+        //     age: 22,
+        //     location: "Arad"
+        // }
+
+        // var person5 = {
+        //     name: "Ana",
+        //     age: 13,
+        //     location: "Sibiu"
+        // }
+        // var personList = [person1, person2, person3, person4, person5];
+
+        // var city = "Cluj";
+
+        // for (var i = 0; i < personList.length; i++){
+        //       var person = personList[i];
+
+            // if (person.age >= 18 && person.location === city) {
+            //     console.log(person.name + " from " + person.location + " can vote because you are " + person.age);
+            // }
+            // // else if (person.age < 18 && person.location === city) {
+            // //     console.log(person.name + " cannot vote, you are " + person.age);
+            // // }
+            // else if (person.age >= 18 && person.location !== city) {
+            //     console.log(person.name + " cannot vote, you are not from " + city);
+            // }
+            // else {
+            //     console.log(person.name + " cannot vote, you are not from " + city + " and you are " + person.age);
+            // }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

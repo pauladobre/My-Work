@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <script>
+        var numberArray = [5, 15, 1, 3, 4, 75, 25, 6, 7, 11, 6, 2, 15, -1, 90, 76, 76];
+
+        console.log(`Problem1: Return the first n elements from an array`);
+
+        function firstElements(numberArray, x) {
+            let firstElementsArray = [];
+            for (let i = 0; i < x && i < numberArray.length; i++) {
+                firstElementsArray.push(numberArray[i]);
+            }
+            return firstElementsArray;
+        }
+
+        console.log(`The first n Elements are ${firstElements(numberArray, 5)}`);
+        console.log(`------------`);
+
+        //---------------------------------------------------------------------------------------------
+
+        console.log(`Problem2: Return the even numbers from array`);
+        function getEvenNumber(numberArray) {
+            let evenNumbers = [];
+            for (let i = 0; i < numberArray.length; i++) {
+                if (numberArray[i] % 2 === 0)
+                    evenNumbers.push(numberArray[i]);
+            }
+            return evenNumbers;
+        }
+        console.log(`The Even Numbers are ${getEvenNumber(numberArray)}`);
+        console.log(`------------`);
+
+        //---------------------------------------------------------------------------------------------
+
+        console.log(`Problem3: Split the array in 2 arrays: odd/even numbers`);
+        // function splitOddEven(numberArray) {
+        //     let evenNumbersArray = [];
+        //     let oddNumbersArray = [];
+
+        //     for (let i = 0; i < numberArray.length; i++) {
+        //         if (numberArray[i] % 2 === 0)
+        //             evenNumbersArray.push(numberArray[i])
+        //         else
+        //             oddNumbersArray.push(numberArray[i])
+        //     }
+        //     return [evenNumbersArray, oddNumbersArray];
+        // }
+
+        // console.log(`The Even Number Array is ${splitOddEven(numberArray)[0]}`);
+        // console.log(`The Odd Number Array is ${splitOddEven(numberArray)[1]}`);
+
+        console.log(`------------`);
+
+        //---------------------------------------------------------------------------------------------
+
+        //-Varianta 2 unde foloseste filter in loc de push
+        function splitOddEven(numberArray) {
+            const evenNumbersArray = numberArray.filter(num => num % 2 === 0);
+            const oddNumbersArray = numberArray.filter(num => num % 2 !== 0);
+            return [evenNumbersArray, oddNumbersArray];
+        }
+        console.log(`The Even Number Array is ${splitOddEven(numberArray)[0]}`);
+        console.log(`The Odd Number Array is ${splitOddEven(numberArray)[1]}`);
+        console.log(`------------`);
+
+        //---------------------------------------------------------------------------------------------
+
+        console.log(`Problem4: Log n last items`);
+        // function lastNItems(numberArray, n) {
+        //     let results = [];
+        //     for (let i = numberArray.length - n; i < numberArray.length; i++) {
+        //         results.push(numberArray[i])
+        //     }
+        //     return results;
+        // }
+        // console.log(`The last n Items are: ${lastNItems(numberArray, 4)}`);
+
+        ///Varianta facuta cu slice()
+        function lastNItems(numberArray, n) {
+            return numberArray.slice(-n);
+        }
+        console.log(`The last n Items are: ${lastNItems(numberArray, 5)}`);
+        console.log(`------------`);
+
+        console.log(`Problem5: Log items in reverse order`);
+
+        //------------------------------------------------------------------------------------
+        // function getReverseOrder(numberArray) {
+        //     let results = [];
+        //     for (let i = numberArray.length - 1; i >= 0; i--)
+        //         results.push(numberArray[i]);
+        // }
+        // console.log(`The Items in reverse are: ${getReverseOrder(numberArray)}`);
+
+        ///Varianta facuta cu reverse()
+        function getReverseOrder(numberArray) {
+            return numberArray.reverse();
+        }
+        console.log(`The Items in reverse are: ${getReverseOrder(numberArray)}`);
+        console.log(`------------`);
+
+        //------------------------------------------------------------------------------------
+        console.log(`Problem6: Log the sum for the elements in the array`);
+
+        // function getSum(numberArray) {
+        //     let sum = 0;
+
+        //     for (let index = 0; index < numberArray.length; index++) {
+        //         sum = sum + numberArray[index];
+        //     }
+        //     return sum;
+        // }
+        // console.log(`The Sum is: ${getSum(numberArray)}`);
+
+
+        /////Cu functia reduce()
+        function getSum(numberArray) {
+            return numberArray.reduce((sum, num) => sum + num, 0);
+        }
+
+        console.log(`The Sum is: ${getSum(numberArray)}`);
+        console.log(`------------`);
+
+        //------------------------------------------------------------------------------------
+        console.log(`Problem7: Find min/max din array`);
+
+        // function getMinMaxNumber(numberArray) {
+        //     let minNumber = numberArray[0];
+        //     let maxNumber = numberArray[0];
+
+        //     for (let index = 1; index < numberArray.length; index++) {
+        //         if (minNumber > numberArray[index])
+        //             minNumber = numberArray[index];
+
+        //         if (maxNumber < numberArray[index])
+        //             maxNumber = numberArray[index];
+        //     }
+        //     return [minNumber, maxNumber];
+        // }
+        // console.log(`The minNumber is: ${getMinMaxNumber(numberArray)[0]}`);
+        // console.log(`The maxNumber is: ${getMinMaxNumber(numberArray)[1]}`);
+
+        ///cu functia de math.min si math.max
+        function getMinMaxNumber(numberArray) {
+            const minNumber = Math.min(...numberArray);
+            const maxNumber = Math.max(...numberArray);
+
+            return [minNumber, maxNumber];
+        }
+
+        console.log("The minNumber is: " + getMinMaxNumber(numberArray)[0]);
+        console.log("The maxNumber is: " + getMinMaxNumber(numberArray)[1]);
+
+        console.log(`------------`);
+
+        //------------------------------------------------------------------------------------
+        console.log(`Problem7: FizzBuzz game: if divide by 3 => fizz, id divide by 5 => buzz, if divide cu 15 => fizzbuzz`);
+
+        // function fizzBuzz(numberArray) {
+        //     const fizbuzzArray = [];
+
+        //     for (var index = 0; index < numberArray.length; index++) {
+        //         if (numberArray[index] % 15 === 0)
+        //             fizbuzzArray.push("fizzbuzz");
+        //         else if (numberArray[index] % 3 === 0)
+        //             fizbuzzArray.push("fizz");
+        //         else if (numberArray[index] % 5 === 0)
+        //             fizbuzzArray.push("buzz");
+        //         else
+        //             fizbuzzArray.push(numberArray[index]);
+        //     }
+        //     return fizbuzzArray;
+        // }
+        // console.log(`The fizzbuzz Array is: ` + fizzBuzz(numberArray));
+
+        //Facut cu map()
+        function fizzBuzz(numberArray) {
+            return numberArray.map(num => {
+                if (num % 15 === 0) {
+                    return "fizzbuzz";
+                } else if (num % 3 === 0) {
+                    return "fizz";
+                } else if (num % 5 === 0) {
+                    return "buzz";
+                } else {
+                    return num;
+                }
+            });
+        }
+
+        console.log("The fizzbuzz Array is: " + fizzBuzz(numberArray));
+
+        console.log(`------------`);
+
+        //------------------------------------------------------------------------------------
+        console.log(`Problem8: From a list of persons (a person is defined by name, age, location)
+         // => only those over 18 and from a specific location can vote`);
+
+        function canVote(personList, city) {
+
+            personList.forEach(person => {
+                if (isPersonOverEighteen(person) && isPersonFromCity(person, city)) {
+                    console.log(person.name + " from " + person.location + " can vote because you are " + person.age);
+                } else if (isPersonOverEighteen(person) && !isPersonFromCity(person, city)) {
+                    console.log(person.name + " cannot vote, you are not from " + city);
+                } else {
+                    console.log(person.name + " cannot vote, you are not from " + city + " and you are " + person.age);
+                }
+            });
+
+        }
+        function isPersonOverEighteen(person) {
+            return person.age >= 18;
+        }
+
+        function isPersonFromCity(person, city) {
+            return person.location === city;
+        }
+
+        var person1 = {
+            name: "Ion",
+            age: 70,
+            location: "Cluj"
+        };
+
+        var person2 = {
+            name: "Ionel",
+            age: 40,
+            location: "Cluj"
+        };
+
+        var person3 = {
+            name: "Mara",
+            age: 20,
+            location: "Cluj"
+        };
+
+        var person4 = {
+            name: "Ioana",
+            age: 22,
+            location: "Arad"
+        };
+
+        var person5 = {
+            name: "Ana",
+            age: 13,
+            location: "Sibiu"
+        };
+
+        var personList = [person1, person2, person3, person4, person5];
+
+        var city = "Cluj";
+
+        canVote(personList, city);
+
+        console.log(`------------`);
+        console.log(`Function BMI`);
+        console.log(`------------`);
+
+
+
+        function calculateBMI(peopleList) {
+            peopleList.forEach(person => {
+                const bmi = Math.round(person.weight / (person.height * person.height));
+                if (bmi < 18.5) {
+                    category = 'underweight';
+                }
+                else if (bmi < 25) {
+                    category = 'normal';
+                }
+                else if (bmi < 30) {
+                    category = 'overweight';
+                }
+                else {
+                    category = 'obese';
+                }
+                console.log(`${person.name} |${person.gender} | ${bmi} | ${category}`);
+            });
+
+        }
+        const peopleList = [
+            { name: 'John Doe', gender: 'M', height: 1.80, weight: 78 },
+            { name: 'Jane Doe', gender: 'F', height: 1.60, weight: 58 },
+            { name: 'Jinny Doe', gender: 'F', height: 1.55, weight: 46 },
+            { name: 'Johnny Doe', gender: 'M', height: 1.85, weight: 68 },
+            { name: 'Anna Doe', gender: 'F', height: 1.90, weight: 120 }
+        ]
+        calculateBMI(peopleList);
+
+        // function calculateBMI(peopleList) {
+        //     return peopleList.map(person => {
+        //         const bmi = (person.weight / (person.height ** 2)).toFixed(1);
+        //         const category = bmi < 18.5 ? 'Underweight' :
+        //             bmi < 25 ? 'Normal weight' :
+        //                 bmi < 30 ? 'Overweight' : 'Obese';
+
+        //         return { name: person.name, gender: person.gender, bmi, category };
+        //     });
+        // }
+        // const peopleList = [
+        //     { name: 'John Doe', gender: 'M', weight: 80, height: 1.88 },
+        //     { name: 'Jane', gender: 'F', weight: 30, height: 1.62 },
+        //     { name: 'Johnny', gender: 'M', weight: 80, height: 1.73 },
+        //     { name: 'Jill', gender: 'F', weight: 170, height: 1.88 },
+        // ];
+
+        // const results = calculateBMI(peopleList);
+
+        // console.log(results);
+        console.log(`------------`);
+        console.log(`Write a JavaScript function that reverse a number`);
+        //Example x = 32243;
+        //Expected Output : 34223
+
+        function reverseNumber(n) {
+            n = n + "";
+            return n.split("").reverse().join("");
+        }
+        console.log(Number(reverseNumber(32243)));
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function that checks whether a passed string is palindrome or not`);
+        function isPalindrome(str) {
+            // Convert the string to lowercase and remove non-alphanumeric characters
+            str = str.toLowerCase().replace(/[\W_]/g, '');
+
+            // Reverse the string and compare it to the original
+            return str === str.split('').reverse().join('');
+        }
+        console.log(isPalindrome('racecar')); // true
+        console.log(isPalindrome('hello')); // false
+        console.log(isPalindrome('A man, a plan, a canal: Panama')); // true
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function that generates all combinations of a string`);
+
+        function generateCombinations(str) {
+            let result = []; // Create an empty array to store the combinations
+            for (let i = 0; i < str.length; i++) { // Loop over each character in the string
+                for (let j = i + 1; j <= str.length; j++) { // Loop over each possible combination starting with the current character
+                    result.push(str.slice(i, j)); // Add the current combination to the result array
+                }
+            }
+            return result; // Return the array of combinations
+        }
+
+        console.log(generateCombinations('dog'));
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function that returns a passed string with letters in alphabetical order.`);
+
+        function alphabetOrder(str) {
+            return str.split('').sort().join('');
+        }
+        console.log(alphabetOrder("webmaster"));
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case`);
+
+        function capitalizeWords(str) {
+            const words = str.split(' ');
+            for (let i = 0; i < words.length; i++) {
+                //i este cuvantul din array si 0 e prima litera din cuvant
+                words[i] = words[i][0].toUpperCase() + words[i].substring(1);
+            }
+            const capitalizedString = words.join(' ');
+
+            return capitalizedString;
+        }
+        console.log(capitalizeWords('ana are mere'));
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function that accepts a string as a parameter and find the longest word within the string`);
+
+        function findLongestWord(str) {
+            const words = str.split(' ');
+            let longestWord = '';
+
+            for (i = 0; i < words.length; i++) {
+                if (words[i].length > longestWord.length) {
+                    longestWord = words[i];
+                }
+            }
+            return longestWord;
+        }
+
+        console.log(findLongestWord('anaaaaaaa are mere'));
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string`);
+
+        function getVowels(str) {
+            const words = str.toString();
+            let numberOfVowels = 0;
+
+            for (let i = 0; i < words.length; i++) {
+                if (words.charAt(i) == "a" || words.charAt(i) == "e" || words.charAt(i) == "i" || words.charAt(i) == "o" || words.charAt(i) == "u") {
+                    numberOfVowels++;
+                }
+            }
+            return numberOfVowels;
+        }
+        console.log(getVowels('Orasul meu este cel mai frumos.'));
+
+        // cu regex
+        function getVowels(str) {
+            // Use a regular expression to match all vowels in the string
+            const vowels = str.match(/[aeiou]/gi);
+
+            // If no vowels are found, return 0
+            if (vowels === null) {
+                return 0;
+            }
+
+            // Otherwise, return the number of vowels found
+            return vowels.length;
+        }
+
+        console.log(getVowels('Orasul meu este cel mai frumos.'));
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function that accepts a number as a parameter and check the number is prime or not.`)
+
+        // function getPrimeNumber(number) {
+        //     if (number < 2) {
+        //         return `${number} is not a prime number`;
+        //     }
+
+        //     for (let i = 2; i < number; i++) {
+        //         if (number % i === 0) {
+        //             return `${number} is not a prime number`;
+        //         }
+        //     }
+        //     return `${number} is a prime number`;
+        // }
+        // console.log(getPrimeNumber(13));
+
+        function isPrime(number) {
+            if (number < 2) {
+                return `${number} is not a prime number`
+            }
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return `${number} is not a prime number`;
+                }
+            }
+            return `${number} is a prime number`
+        }
+        console.log(isPrime(13));
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function which accepts an argument and returns the type`)
+
+        function getType(value) {
+            return typeof value;
+        }
+        console.log(getType(42)); // "number"
+        console.log(getType("hello")); // "string"
+        console.log(getType(true)); // "boolean"
+        console.log(getType(null)); // "object"
+        console.log(getType(undefined)); // "undefined"
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively`)
+
+        function Second_Greatest_Lowest(arr) {
+            // First, sort the array in ascending order
+            arr.sort(function (a, b) {
+                return a - b;
+            });
+
+            // Then, get the second lowest number by accessing the index 1
+            let secondLowest = arr[1];
+
+            // To get the second greatest number, reverse the array and get the element at index 1
+            let reversedArr = arr.reverse();
+            let secondGreatest = reversedArr[1];
+
+            return [secondLowest, secondGreatest];
+        }
+        console.log(Second_Greatest_Lowest([5, 30, 3, 17, 4, 9]));
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function which says whether a number is perfect`)
+
+        function isPerfectNumber(num) {
+            let sum = 0;
+
+            for (let i = 1; i < num; i++) {
+                if (num % i === 0) {
+                    sum += i;
+                }
+            }
+
+            return sum === num;
+        }
+        console.log(isPerfectNumber(6));
+
+        console.log(`------------`);
+        console.log(`JavaScript Program to Find the Factors of a Number`)
+
+        function getFactors(num) {
+            let factors = [];
+            for (let i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    factors.push(i);
+                }
+            }
+            return factors;
+        }
+        console.log(getFactors(12))
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function to convert an amount to coins`)
+
+        function convertToCoins(amount, coins) {
+            const result = [];
+
+            for (let i = 0; i < coins.length; i++) {
+                while (amount >= coins[i]) {
+                    result.push(coins[i]);
+                    amount -= coins[i];
+                }
+            }
+
+            return result;
+        }
+
+        console.log(convertToCoins(93, [25, 10, 5, 1]));
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. Accept b and n from the user and display the result.`);
+
+        function exp(b, n) {
+            let ans = 1;
+            for (let i = 1; i <= n; i++) {
+                ans = b * ans;
+            }
+            return ans;
+        }
+
+        console.log(exp(2, 3));
+
+        console.log(`------------`);
+        console.log(`Write a JavaScript function to extract unique characters from a string.`);
+
+        function extractUniqueChars(str) {
+            let uniqueChars = "";
+            for (let i = 0; i < str.length; i++) {
+                if (uniqueChars.indexOf(str[i]) === -1) {
+                    uniqueChars += str[i]
+                }
+            }
+            return uniqueChars;
+        }
+
+        console.log(extractUniqueChars("thequickbrownfoxjumpsoverthelazydog")); // Output: "thequickbrownfxjmpsvlazydg"
+
+        console.log(`------------`);
+        console.log(` Write a JavaScript function to  get the number of occurrences of each letter in specified string. .`);
+
+        function countLetterOccurrences(str) {
+            const counts = {};
+
+            for (let i = 0; i < str.length; i++) {
+                const letter = str[i];
+                counts[letter] = (counts[letter] || 0) + 1;
+            }
+
+            return counts;
+        }
+
+        const str = 'hello world';
+        const counts = countLetterOccurrences(str);
+        console.log(counts); // { h: 1, e: 1, l: 3, o: 2, ' ': 1, w: 1, r: 1, d: 1 }
+
+    </script>
+</body>
+
+</html>

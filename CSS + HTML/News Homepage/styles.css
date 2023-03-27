@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap);
+
+body {
+    font-family: 'Inter';
+    background-color: hsl(36, 100%, 99%);
+    margin: 44px 164px 44px 164px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 52px;
+}
+
+.navbar .navbar-anchors a {
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: hsl(233, 8%, 79%);
+}
+
+.navbar .navbar-anchors a:hover {
+    color: hsl(35, 77%, 62%);
+}
+
+.grid-area {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas: 'header-image header-image articles'
+        'header-image header-image articles'
+        'intro intro articles';
+    grid-gap: 35px;
+}
+
+.header-image {
+    grid-area: header-image;
+    background-image: url(assets/images/image-web-3-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.intro {
+    grid-area: intro;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.intro h1 {
+    font-size: 52px;
+    color: hsl(240, 100%, 5%);
+}
+
+.header-paragraph p {
+    color: hsl(233, 8%, 79%);
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.header-paragraph button {
+    background-color: hsl(240, 100%, 5%);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.articles {
+    background: hsl(240, 100%, 5%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    grid-area: articles;
+    padding: 24px;
+}
+
+.articles h2 {
+    color: hsl(35, 77%, 62%);
+    margin-bottom: 32px;
+    font-size: 40px;
+}
+
+.articles h3 {
+    color: hsl(35, 77%, 62%);
+    font-size: 22px;
+    margin-bottom: 28px;
+}
+
+.articles p {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+.articles1,
+.articles2,
+.articles3 {
+    border-bottom: 1px solid hsl(36, 100%, 99%);
+
+}
+
+.articles2 {
+    border-bottom: 1px solid hsl(36, 100%, 99%);
+    margin-top: 28px;
+}
+
+.articles3 {
+    margin-top: 28px;
+}
+
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.cards1-img,
+.cards2-img,
+.cards3-img {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 160px;
+}
+
+.cards1,
+.cards2,
+.cards3 {
+    display: flex;
+}
+
+.cards1-img {
+    background-image: url(assets/images/image-retro-pcs.jpg);
+}
+
+.cards2-img {
+    background-image: url(assets/images/image-top-laptops.jpg);
+}
+
+.cards3-img {
+    background-image: url(assets/images/image-gaming-growth.jpg);
+}
+
+.cards1-text,
+.cards2-text,
+.cards3-text {
+    margin-left: 28px;
+    max-width: 100%;
+}
+
+.cards h3 {
+    color: hsl(233, 8%, 79%);
+ 
+    margin-bottom: 14px;
+}
+
+.cards h4 {
+    color: hsl(240, 100%, 5%);
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.cards p {
+    color: hsl(240, 100%, 5%);
+    font-size: 12px;
+    max-width: max-content;
+
+}

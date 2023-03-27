@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+
+<body>
+    <p id='text'>JavaScript Exercises - w3resource</p>
+    <div>
+        <button id="jsstyle" onclick="jsStyle()">Style</button>
+    </div>
+    <br>
+
+    <form id="form1" onsubmit="getFormValue()">
+        First name: <input type="text" name="fname" value="David"><br>
+        Last name: <input type="text" name="lname" value="Beckham"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <input type="button" value="Click to set paragraph background color" onclick="setBackground()">
+    <p>w3resource JavaScript Exercises</p>
+    <p>w3resource PHP Exercises</p>
+    <br>
+
+    <p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self"
+            href="https://www.w3resource.com/">w3resource</a></p>
+    <button onclick="getAttributes()">Click here to get attributes value</button>
+    <br>
+    <table id="sampleTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+    </table><br>
+    <input type="button" onclick="insertRow()" value="Insert row">
+    <br>
+    <br>
+    <table id="myTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+        <tr>
+            <td>Row3 cell1</td>
+            <td>Row3 cell2</td>
+        </tr>
+    </table>
+    <br>
+    <form>
+        <input type="button" onclick="changeContent()" value="Change content">
+    </form>
+    <br>
+    <select id="colorSelect">
+        <option>Red</option>
+        <option>Green</option>
+        <option>White</option>
+        <option>Black</option>
+    </select>
+    <input type="button" onclick="removeColor()" value="Select and Remove">
+    </form>
+    <script>
+        console.log(`Ex1: Modify the style of the paragraph text through javascript code.`);
+        function jsStyle() {
+            const text = document.getElementById("text");
+            text.style.color = "red";
+            text.style.fontSize = "20px";
+        }
+
+        console.log(`-------------------`);
+        console.log(`Ex2: Write a JavaScript function to get the values of First and Last name of the following form.`);
+        function getFormValue() {
+            const form1 = document.getElementById("form1");
+            const firstName = form.elements["fname"].value;
+            const lastName = form.elements["lname"].value;
+            console.log(`First name: ${firstName}`);
+            console.log(`Last name: ${lastName}`);
+        }
+
+        console.log(`-------------------`);
+        console.log(`Ex3: Write a JavaScript program to set the background color of a paragraph`);
+
+        function setBackground() {
+            const paragraphs = document.getElementsByTagName("p");
+            // for (let i = 0; i < paragraphs.length; i++) {
+            //     paragraphs[i].style.backgroundColor = "green";
+            // }
+            for (let paragraph of paragraphs) {
+                paragraph.style.backgroundColor = "green";
+            }
+        }
+
+        console.log(`-------------------`);
+        console.log(`Ex4: Write a JavaScript function to get the value of the href, hreflang, rel, target, and type attributes of the specified link.`);
+
+        function getAttributes() {
+
+            const link = document.getElementById("w3r");
+            const href = link.getAttribute("href");
+            const hreflang = link.getAttribute("hreflang");
+            const rel = link.getAttribute("rel");
+            const target = link.getAttribute("target");
+            const type = link.getAttribute("type");
+            console.log("href: " + href);
+            console.log("hreflang: " + hreflang);
+            console.log("rel: " + rel);
+            console.log("target: " + target);
+            console.log("type: " + type);
+        }
+
+        console.log(`-------------------`);
+        console.log(`Ex5: Write a JavaScript function to add rows to a table.`);
+
+        function insertRow() {
+            const table = document.getElementById("sampleTable");
+            const row = table.insertRow();
+            const cell1 = row.insertCell();
+            const cell2 = row.insertCell();
+            cell1.innerHTML = "cell1";
+            cell2.innerHTML = "cell2";
+        }
+
+        console.log(`-------------------`);
+        console.log(`Ex6: Write a JavaScript function that accept row, column, (to identify a particular cell) and a string to update the content of that cell.`);
+
+        function changeContent() {
+            const row = parseInt(prompt("Enter the row number (starting from 1):")) - 1; // Get the row number (0-indexed)
+            const col = parseInt(prompt("Enter the column number (starting from 1):")) - 1; // Get the column number (0-indexed)
+            const content = prompt("Enter the new content:"); // Get the new content
+            const table = document.getElementById("myTable"); // Get the table element
+            table.rows[row].cells[col].innerHTML = content; // Update the content of the cell
+        }
+
+        console.log(`-------------------`);
+        console.log(`Ex8: Remove items from a dropdown list`);
+
+        function removeColor() {
+            const select = document.getElementById("colorSelect");
+            select.remove(select.selectedIndex);
+        }
+
+        console.log(`-------------------`);
+        console.log(`Ex8: Remove items from a dropdown list`);
+    </script>
+
+
+</body>
+
+</html>
