@@ -16,19 +16,19 @@ Finally, the weather application is designed to be responsive on mobile devices.
 ## Installation
 To install and run the application:
 
-*Clone the repository from GitHub
-*Navigate to the project directory in the terminal
-*Install dependencies by running npm install
-*Run the development server by running npm run dev
-*Access the application in your browser with the provided link
+(*) Clone the repository from GitHub
+(*) Navigate to the project directory in the terminal
+(*) Install dependencies by running npm install
+(*) Run the development server by running npm run dev
+(*) Access the application in your browser with the provided link
 
 ## Technologies Used
-*HTML
-*CSS
-*JavaScript
-*Vite.js
+(*) HTML
+(*) CSS
+(*) JavaScript
+(*) Vite.js
 
 ## APIs Used
-*Open Weather API
+(*) Open Weather API
 
 
